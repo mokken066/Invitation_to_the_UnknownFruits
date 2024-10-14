@@ -181,10 +181,19 @@ footer {
     display: none; /* 初期状態では非表示 */
     width: 100%;
     height: auto; /* 自動調整 */
+    max-width: 600px; /* 最大幅を設定 */
+    max-height: 400px; /* 最大高さを設定 */
+    border-radius: 20px; /* 角を丸くする */
+    transition: opacity 0.5s ease; /* スムーズな切り替え */
 }
 
 .slide.active {
     display: block; /* アクティブなスライドのみ表示 */
+    opacity: 1; /* フェードイン */
+}
+
+.slide.inactive {
+    opacity: 0; /* フェードアウト */
 }
 
 /* レスポンシブスタイル */
