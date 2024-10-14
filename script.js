@@ -79,9 +79,12 @@ const slides = document.querySelectorAll('.slide');
 
 function showSlides() {
     slides.forEach((slide, index) => {
-        slide.classList.remove('active'); // すべてのスライドを非表示
         if (index === slideIndex) {
-            slide.classList.add('active'); // アクティブなスライドを表示
+            slide.classList.add('active');
+            slide.classList.remove('inactive');
+        } else {
+            slide.classList.remove('active');
+            slide.classList.add('inactive');
         }
     });
     slideIndex = (slideIndex + 1) % slides.length; // スライドのインデックスを更新
