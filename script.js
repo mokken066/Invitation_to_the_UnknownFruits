@@ -89,7 +89,7 @@ function showSlides() {
             slide.style.opacity = 0; // フェードアウト
             setTimeout(() => {
                 slide.style.display = "none"; // フェードアウト後に非表示
-            }, 1000); // フェードアウトの時間と同じ時間で遅延
+            }, 10); // フェードアウトの時間と同じ時間で遅延
         }
     });
     slideIndex = (slideIndex + 1) % slides.length; // スライドのインデックスを更新
