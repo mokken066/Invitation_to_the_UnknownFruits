@@ -167,13 +167,6 @@ footer {
 }
 
 #slideshow {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden; /* コンテンツがはみ出ないようにする */
-}
-
-#slideshow {
     display: flex; /* Flexboxで配置 */
     justify-content: center; /* 中央揃え */
     align-items: center; /* 縦方向の中央揃え */
