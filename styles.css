@@ -173,6 +173,15 @@ footer {
     overflow: hidden; /* コンテンツがはみ出ないようにする */
 }
 
+#slideshow {
+    display: flex; /* Flexboxで配置 */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 縦方向の中央揃え */
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden; /* コンテンツがはみ出ないようにする */
+}
+
 .slideshow-container {
     position: relative;
 }
@@ -184,7 +193,7 @@ footer {
     max-width: 600px; /* 最大幅を設定 */
     max-height: 400px; /* 最大高さを設定 */
     border-radius: 20px; /* 角を丸くする */
-    transition: opacity 0.5s ease; /* スムーズな切り替え */
+    transition: opacity 1s ease; /* フェード効果を追加 */
 }
 
 .slide.active {
@@ -194,7 +203,9 @@ footer {
 
 .slide.inactive {
     opacity: 0; /* フェードアウト */
+    transition: opacity 1s ease; /* フェードアウトのトランジション */
 }
+
 
 /* レスポンシブスタイル */
 @media (max-width: 768px) {
