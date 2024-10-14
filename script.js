@@ -80,12 +80,13 @@ const slides = document.querySelectorAll('.slide');
 function showSlides() {
     slides.forEach((slide, index) => {
         if (index === slideIndex) {
-            slide.classList.add('active');
-            slide.classList.remove('inactive');
+            slide.classList.add('active'); // アクティブなスライドを表示
             slide.style.display = "block"; // スライドを表示
+            setTimeout(() => {
+                slide.style.opacity = 1; // フェードイン
+            }, 10); // 一瞬遅らせてフェードイン効果を適用
         } else {
-            slide.classList.remove('active');
-            slide.classList.add('inactive');
+            slide.style.opacity = 0; // フェードアウト
             setTimeout(() => {
                 slide.style.display = "none"; // フェードアウト後に非表示
             }, 1000); // フェードアウトの時間と同じ時間で遅延
