@@ -82,9 +82,13 @@ function showSlides() {
         if (index === slideIndex) {
             slide.classList.add('active');
             slide.classList.remove('inactive');
+            slide.style.display = "block"; // スライドを表示
         } else {
             slide.classList.remove('active');
             slide.classList.add('inactive');
+            setTimeout(() => {
+                slide.style.display = "none"; // フェードアウト後に非表示
+            }, 1000); // フェードアウトの時間と同じ時間で遅延
         }
     });
     slideIndex = (slideIndex + 1) % slides.length; // スライドのインデックスを更新
@@ -93,6 +97,5 @@ function showSlides() {
 // 初期スライドを表示
 showSlides();
 
-// 2秒ごとにスライドを切り替え
-setInterval(showSlides, 2000);
-
+// 8秒ごとにスライドを切り替え
+setInterval(showSlides, 8000);
