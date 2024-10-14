@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未知の実りにご招待</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo002_02.png" alt="イベントロゴ" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#event-details">イベント情報</a></li>
+                <li><a href="#past-events">過去イベント</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="top">
+        <h3>今年のイベント情報</h3>
+        <h4 id="status-message">現在、今年のイベントは準備中です！</h4>
+    </section>
+
+    <section id="event-details" style="display: none;"></section>
+
+    <section id="past-events">
+        <h2>過去のイベント情報</h2>
+        <div class="accordion">
+            <button class="accordion-button" onclick="loadEvent('2023')">2023年</button>
+            <div id="events-2023" class="accordion-content" style="display: none;"></div>
+
+            <button class="accordion-button" onclick="loadEvent('2022')">2022年</button>
+            <div id="events-2022" class="accordion-content" style="display: none;"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>出演希望やお問い合わせは、以下のインスタグラムアカウントまで。</p>
+        <a href="https://www.instagram.com/your_instagram_account/" target="_blank" class="instagram-link">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 未知の実りにご招待</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Topに戻る</button>
+</body>
+</html>
