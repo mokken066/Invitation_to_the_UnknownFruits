@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Noto Serif JP', serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+header {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logo {
+    width: 300px; /* 画像の幅を300pxに設定 */
+    height: auto; /* 高さは自動調整 */
+}
+header h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 48px;
+    margin-top: 10px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 10px 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+section {
+    padding: 20px;
+    text-align: center;
+}
+#top {
+    background: url('https://source.unsplash.com/1600x900/?miscanthus,concert') no-repeat center center/cover;
+    color: #fff;
+}
+#top h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.accordion-button {
+    background-color: #444;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+}
+.accordion-button:hover {
+    background-color: #666;
+}
+.accordion-content {
+    background-color: #3a3a3a;
+    padding: 20px;
+    display: none;
+    overflow: hidden;
+}
+.accordion-content .event-item {
+    margin-bottom: 15px;
+}
+.accordion-content img {
+    width: 200px;
+    height: 120px;
+    margin-right: 10px;
+}
+.accordion-content a {
+    color: #ff6347;
+    text-decoration: none;
+}
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+.instagram-link {
+    color: #ff6347;
+    text-decoration: none;
+    font-size: 20px;
+}
+.instagram-link i {
+    margin-right: 10px;
+}
+.instagram-link:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+/* スケジュールテーブルのスタイル */
+.schedule-table {
+    width: 600px; /* 地図の幅に合わせる */
+    border-collapse: collapse; /* 枠線を重ねて見えないようにする */
+    margin: 20px auto; /* 中央揃え */
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 10px; /* セルのパディングを設定 */
+    text-align: left; /* 左揃え */
+}
+
+.schedule-table th {
+    background-color: #444; /* ヘッダーの背景色 */
+    color: #fff; /* ヘッダーの文字色 */
+}
+
+.schedule-table td {
+    border: none; /* 枠線を表示しない */
+    background-color: #3a3a3a; /* セルの背景色 */
+}
+
+.schedule-table tr:nth-child(even) td {
+    background-color: #2a2a2a; /* 偶数行の背景色を変更 */
+}
+
+.map-container {
+    width: 100%; /* 親要素の幅を100%に設定 */
+    margin: 20px auto; /* 上下にマージンを設定し、左右は自動で中央揃え */
+    position: relative; /* 相対位置を設定 */
+}
+
+.map-container iframe {
+    width: 100%; /* 幅を100%に設定 */
+    height: auto; /* 高さを自動調整 */
+    border: 0; /* 枠線をなしに */
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: none;
+    background-color: #444; /* ダークカラーに変更 */
+    color: white;
+    border: none;
+    padding: 12px 15px; /* パディングを調整 */
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* シャドウを追加 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* トランジションを追加 */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #666; /* ホバー時の色変更 */
+    transform: translateY(-2px); /* 少し浮き上がる効果 */
+}
+
+/* レスポンシブスタイル */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px; /* ヘッダーのフォントサイズを調整 */
+    }
+
+    nav ul li {
+        margin-right: 10px; /* ナビゲーションのマージンを調整 */
+    }
+
+    .accordion-button {
+        font-size: 16px; /* フォントサイズを小さく */
+    }
+
+    .accordion-content iframe {
+        width: 100%; /* 幅を100%に設定 */
+        max-width: 200px; /* 最大幅を200pxに設定 */
+        height: auto; /* 高さを自動調整 */
+    }
+
+    .event-item {
+        flex: 1 0 45%; /* 幅を調整 */
+        margin: 5px; /* マージンを小さく */
+    }
+
+    .schedule-table {
+        width: 100%; /* 幅を100%に設定 */
+    }
+
+    .map-container {
+        width: 100%; /* 親要素の幅を100%に設定 */
+        max-width: 600px; /* 最大幅を600pxに設定 */
+        margin: 0px auto; /* 上下にマージンを設定し、左右は自動で中央揃え */
+        position: relative; /* 相対位置を設定 */
+    }
+    .map-container iframe {
+        width: 100%; /* 幅を100%に設定 */
+        height: auto; /* 高さを自動調整 */
+        border: 0; /* 枠線をなしに */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 28px; /* ヘッダーのフォントサイズをさらに調整 */
+    }
+
+    .accordion-button {
+        font-size: 14px; /* フォントサイズをさらに小さく */
+    }
+
+    .video-container {
+        flex-direction: column; /* 縦に並べる */
+        align-items: center; /* 中央揃え */
+    }
+
+    .event-item {
+        flex: 1 0 90%; /* 幅を広く */
+    }
+
+    .schedule-table {
+        width: 100%; /* 幅を100%に設定 */
+    }
+    
+    .map-container {
+        width: 100%; /* 親要素の幅を100%に設定 */
+        max-width: 400px; /* 最大幅を600pxに設定 */
+        margin: 0px auto; /* 上下にマージンを設定し、左右は自動で中央揃え */
+        position: relative; /* 相対位置を設定 */
+    }
+    .map-container iframe {
+        width: 100%; /* 幅を100%に設定 */
+        height: auto; /* 高さを自動調整 */
+        border: 0; /* 枠線をなしに */
+    }
+
+
+}
