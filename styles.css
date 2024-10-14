@@ -186,17 +186,13 @@ footer {
     max-width: 600px; /* 最大幅を設定 */
     max-height: 400px; /* 最大高さを設定 */
     border-radius: 20px; /* 角を丸くする */
+    opacity: 0; /* 初期状態で透明 */
     transition: opacity 1s ease; /* フェード効果を追加 */
 }
 
 .slide.active {
     display: block; /* アクティブなスライドのみ表示 */
     opacity: 1; /* フェードイン */
-}
-
-.slide.inactive {
-    opacity: 0; /* フェードアウト */
-    transition: opacity 1s ease; /* フェードアウトのトランジション */
 }
 
 
