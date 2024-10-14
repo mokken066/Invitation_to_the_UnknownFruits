@@ -73,3 +73,23 @@ function scrollToTop() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
 }
+
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlides() {
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active'); // すべてのスライドを非表示
+        if (index === slideIndex) {
+            slide.classList.add('active'); // アクティブなスライドを表示
+        }
+    });
+    slideIndex = (slideIndex + 1) % slides.length; // スライドのインデックスを更新
+}
+
+// 初期スライドを表示
+showSlides();
+
+// 2秒ごとにスライドを切り替え
+setInterval(showSlides, 2000);
+

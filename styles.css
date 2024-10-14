@@ -166,6 +166,27 @@ footer {
     transform: translateY(-2px); /* 少し浮き上がる効果 */
 }
 
+#slideshow {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden; /* コンテンツがはみ出ないようにする */
+}
+
+.slideshow-container {
+    position: relative;
+}
+
+.slide {
+    display: none; /* 初期状態では非表示 */
+    width: 100%;
+    height: auto; /* 自動調整 */
+}
+
+.slide.active {
+    display: block; /* アクティブなスライドのみ表示 */
+}
+
 /* レスポンシブスタイル */
 @media (max-width: 768px) {
     header h1 {
