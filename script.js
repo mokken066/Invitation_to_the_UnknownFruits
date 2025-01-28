@@ -15,7 +15,7 @@ function loadEvent(year) {
 }
 
 // フラグを持たせる
-const isEventReady = true; // イベントが準備中かどうか
+const isEventReady = false; // イベントが準備中かどうか
 
 
         window.onload = function() {
