@@ -49,7 +49,17 @@ const isEventReady = false; // イベントが準備中かどうか
                     .then(data => {
                         events2023.innerHTML = data;
                     });
-            } else if (year === '2022') {
+            } else if (year === '2023') {
+                events2022.style.display = 'block';
+                events2023.style.display = 'none';
+                fetch('events-2022.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        events2022.innerHTML = data;
+                    });
+            }
+
+} else if (year === '2022') {
                 events2022.style.display = 'block';
                 events2023.style.display = 'none';
                 fetch('events-2022.html')
