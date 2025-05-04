@@ -269,11 +269,13 @@ footer {
     }
 
     .video-container {
-        flex-direction: column; /* 縦に並べる */
-        align-items: center; /* 中央揃え */
-        width: 100%;
-        max-width: 800px;
-        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* 各動画の間隔 */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
 
     .video-container iframe,
@@ -283,4 +285,20 @@ footer {
         display: block;
         border: none;
     }
+
+
+
+    .event-item {
+        flex: 1 1 45%; /* 最小幅45%で2列（必要に応じて調整） */
+        max-width: 560px;
+    }
+
+    .event-item iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: none;
+        display: block;
+    }
+
+    
 }
