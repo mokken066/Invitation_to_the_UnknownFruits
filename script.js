@@ -38,7 +38,7 @@ const isEventReady = false; // イベントが準備中かどうか
         };
 
         function loadEvent(year) {
-            const thisEvent;
+            thisEvent =null;
             const thisPage;
             const events2024 = document.getElementById('events-2024');
             const events2023 = document.getElementById('events-2023');
