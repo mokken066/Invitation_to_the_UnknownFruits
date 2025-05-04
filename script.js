@@ -63,7 +63,7 @@ function loadEvent(year) {
         thisPage = 'events-2022.html';
     }
 
-    if (thisEvent.style.display = 'none') {
+    if (thisEvent.style.display === 'none') {
         thisEvent.style.display = 'block';
         fetch(thisPage).then(response => response.text())
         .then(data => {thisEvent.innerHTML = data;});
