@@ -1,3 +1,10 @@
+// ★イベントが準備中かどうか
+// true：今年度開催、false：準備中
+const isEventReady = false; 
+
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
 function loadEvent(year) {
     const content = document.getElementById(`events-${year}`);
     const allContents = document.querySelectorAll('.accordion-content');
@@ -14,74 +21,56 @@ function loadEvent(year) {
     content.style.display = isVisible ? 'none' : 'block'; // クリックした年の表示/非表示を切り替え
 }
 
-// フラグを持たせる
-const isEventReady = false; // イベントが準備中かどうか
+window.onload = function() {
+    const eventDetailsSection = document.getElementById('event-details');
+    const statusMessage = document.getElementById('status-message');
 
+    if (isEventReady) {
+        eventDetailsSection.style.display = 'block';
+        statusMessage.textContent = "＜＜開催情報＞＞";
+    } else {
+        eventDetailsSection.style.display = 'none';
+    }
 
-        window.onload = function() {
-            const eventDetailsSection = document.getElementById('event-details');
-            const statusMessage = document.getElementById('status-message');
+    // イベント情報を読み込む
+    fetch('event-info.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('event-details').innerHTML = data;
+        });
+};
 
-            if (isEventReady) {
-                eventDetailsSection.style.display = 'block';
-                statusMessage.textContent = "＜＜開催情報＞＞";
-            } else {
-                eventDetailsSection.style.display = 'none';
-            }
+function loadEvent(year) {
+    thisEvent = null;
+    thisPage = null;
 
-            // イベント情報を読み込む
-            fetch('event-info.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('event-details').innerHTML = data;
-                });
-        };
+    // ★Const
+    const events2024 = document.getElementById('events-2024');
+    const events2023 = document.getElementById('events-2023');
+    const events2022 = document.getElementById('events-2022');
 
-        function loadEvent(year) {
-            thisEvent = null;
-            thisPage = null;
-            const events2024 = document.getElementById('events-2024');
-            const events2023 = document.getElementById('events-2023');
-            const events2022 = document.getElementById('events-2022');
-            
-            events2022.style.display = 'none';
-            events2023.style.display = 'none';
-            events2024.style.display = 'none';
+    // ★ページ情報
+    if (year === '2024') {
+        thisEvent = events2024;
+        thisPage = 'events-2024.html';
+    }
+    if (year === '2023') {
+        thisEvent = events2023;
+        thisPage = 'events-2023.html';
+    }
+    if (year === '2022') {
+        thisEvent = events2022;
+        thisPage = 'events-2022.html';
+    }
 
-            
-            if (year === '2024') {
-                thisEvent = events2024;
-                thisPage = 'events-2024.html';
-            }
-            if (year === '2023') {
-                thisEvent = events2023;
-                thisPage = 'events-2023.html';
-            }
-            if (year === '2022') {
-                thisEvent = events2022;
-                thisPage = 'events-2022.html';
-            }
-
-            if (thisEvent.style.display = 'none') {
-                thisEvent.style.display = 'block';
-                fetch(thisPage).then(response => response.text())
-                .then(data => {thisEvent.innerHTML = data;});
-            } else {
-                thisEvent.style.display = 'none';
-            }
-
-            
-//            if (year === '2023') {           
-//                events2023.style.display = 'block';
-//                fetch('events-2023.html').then(response => response.text())
-//                    .then(data => {events2023.innerHTML = data;});
-//            } 
-//            if (year === '2022') {
-//                events2022.style.display = 'block';
-//                fetch('events-2022.html').then(response => response.text())
-//                    .then(data => {events2022.innerHTML = data;});
-//            }
-        }
+    if (thisEvent.style.display = 'none') {
+        thisEvent.style.display = 'block';
+        fetch(thisPage).then(response => response.text())
+        .then(data => {thisEvent.innerHTML = data;});
+    } else {
+        thisEvent.style.display = 'none';
+    }
+}
         
 window.onscroll = function() {
     const button = document.getElementById("scrollToTopBtn");
@@ -96,9 +85,6 @@ function scrollToTop() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
 }
-
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
 
 function showSlides() {
     slides.forEach((slide, index) => {
