@@ -60,8 +60,6 @@ const isEventReady = false; // イベントが準備中かどうか
                     .then(data => {
                         events2023.innerHTML = data;
                     });
-            }
-
             } else if (year === '2022') {
                 events2022.style.display = 'block';
                 events2023.style.display = 'none';
