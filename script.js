@@ -38,8 +38,8 @@ const isEventReady = false; // イベントが準備中かどうか
         };
 
         function loadEvent(year) {
-            thisEvent =null;
-            const thisPage;
+            thisEvent = null;
+            thisPage = null;
             const events2024 = document.getElementById('events-2024');
             const events2023 = document.getElementById('events-2023');
             const events2022 = document.getElementById('events-2022');
