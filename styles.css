@@ -248,11 +248,6 @@ footer {
         font-size: 14px; /* フォントサイズをさらに小さく */
     }
 
-    .video-container {
-        flex-direction: column; /* 縦に並べる */
-        align-items: center; /* 中央揃え */
-    }
-
     .event-item {
         flex: 1 0 90%; /* 幅を広く */
     }
@@ -274,6 +269,8 @@ footer {
     }
 
     .video-container {
+        flex-direction: column; /* 縦に並べる */
+        align-items: center; /* 中央揃え */
         width: 100%;
         max-width: 800px;
         margin: 20px auto;
