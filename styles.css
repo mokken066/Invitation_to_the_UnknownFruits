@@ -141,10 +141,11 @@ footer {
 }
 
 .map-container iframe {
-    width: 100%; /* 幅を100%に設定 */
-    height: auto; /* 高さを自動調整 */
-    border: 0; /* 枠線をなしに */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
 }
+
 
 #scrollToTopBtn {
     position: fixed;
