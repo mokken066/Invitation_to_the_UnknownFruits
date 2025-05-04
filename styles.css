@@ -273,5 +273,17 @@ footer {
         border: 0; /* 枠線をなしに */
     }
 
+    .video-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+    }
 
+    .video-container iframe,
+    .video-container video {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* アスペクト比を指定して高さも自動調整 */
+        display: block;
+        border: none;
+    }
 }
