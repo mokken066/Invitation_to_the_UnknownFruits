@@ -3,6 +3,7 @@
 const isEventReady = true; 
 
 let slideIndex = 0;
+let deferredPrompt;
 const slides = document.querySelectorAll('.slide');
 
 function loadEvent(year) {
@@ -109,3 +110,47 @@ showSlides();
 
 // 8秒ごとにスライドを切り替え
 setInterval(showSlides, 8000);
+
+
+// インストールプロンプトのUI要素を取得
+const installButton = document.getElementById('install-button');
+const installSection = document.getElementById('pwa-install-section');
+
+// ブラウザがインストールを促せる状態になったらイベントを受け取る
+window.addEventListener('beforeinstallprompt', (e) => {
+    // 自動プロンプトを一旦停止
+    e.preventDefault();
+    // イベントを保存しておき、後で手動で発火させる
+    deferredPrompt = e;
+    
+    // インストールボタンを表示
+    installSection.style.display = 'block';
+});
+
+// ユーザーがインストールボタンをクリックした時の処理
+installButton.addEventListener('click', () => {
+    // インストールボタンを非表示にする
+    installSection.style.display = 'none';
+    
+    // 保存しておいたプロンプトイベントを実行
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        // ユーザーの選択を追跡
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('ユーザーはアプリをインストールしました');
+            } else {
+                console.log('ユーザーはインストールを拒否しました');
+            }
+            // プロンプトは一度しか使えないので、イベントをリセット
+            deferredPrompt = null;
+        });
+    }
+});
+
+// アプリが既にインストールされているか、インストールを拒否した場合の処理
+window.addEventListener('appinstalled', (e) => {
+    // インストールボタンを非表示にする
+    installSection.style.display = 'none';
+});
+
