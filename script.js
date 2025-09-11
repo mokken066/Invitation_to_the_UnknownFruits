@@ -1,6 +1,6 @@
 // ★イベントが準備中かどうか
 // true：今年度開催、false：準備中
-const isEventReady = false; 
+const isEventReady = true; 
 
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
