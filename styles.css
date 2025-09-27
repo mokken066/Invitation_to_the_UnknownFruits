@@ -199,12 +199,15 @@ footer {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 1.8s ease, transform 1.8s ease; /* ← 1.2s → 1.8s に変更 */
+  transition-delay: 0.3s; /* ← 0.3秒待ってから開始 */
 }
+
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+    
 }
 
 
@@ -313,4 +316,5 @@ footer {
 
     
 }
+
 
