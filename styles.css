@@ -9,6 +9,10 @@ body {
     color: #fff;
     overflow-x: hidden; /* 横スクロールを防ぐ */
 }
+img {
+    width:100%;
+    height:auto;
+}
 header {
     background-color: #222;
     padding: 10px;
