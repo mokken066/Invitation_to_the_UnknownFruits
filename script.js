@@ -46,11 +46,16 @@ function loadEvent(year) {
     thisPage = null;
 
     // ★Const
+    const events2025 = document.getElementById('events-2025');
     const events2024 = document.getElementById('events-2024');
     const events2023 = document.getElementById('events-2023');
     const events2022 = document.getElementById('events-2022');
 
     // ★ページ情報
+    if (year === '2025') {
+        thisEvent = events2025;
+        thisPage = 'events-2025.html';
+    }
     if (year === '2024') {
         thisEvent = events2024;
         thisPage = 'events-2024.html';
