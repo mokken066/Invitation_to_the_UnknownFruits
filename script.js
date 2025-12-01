@@ -1,6 +1,6 @@
 // ★イベントが準備中かどうか
 // true：今年度開催、false：準備中
-const isEventReady = true; 
+const isEventReady = false; 
 
 let slideIndex = 0;
 let deferredPrompt;
