@@ -188,23 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   faders.forEach(fader => observer.observe(fader));
 
-  // Hamburger menu
-  const navToggle = document.getElementById('nav-toggle');
-  const mainNav   = document.getElementById('main-nav');
-
-  if (navToggle && mainNav) {
-    navToggle.addEventListener('click', () => {
-      mainNav.querySelector('ul').classList.toggle('open');
-      navToggle.classList.toggle('active');
-    });
-    mainNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mainNav.querySelector('ul').classList.remove('open');
-        navToggle.classList.remove('active');
-      });
-    });
-  }
-
   // Accordion: toggle 'open' class for CSS animation
   document.querySelectorAll('.accordion-button').forEach(btn => {
     btn.addEventListener('click', () => {
