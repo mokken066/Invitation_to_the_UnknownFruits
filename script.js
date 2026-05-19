@@ -78,14 +78,28 @@ function loadEvent(year) {
     }
 }
         
-window.onscroll = function() {
+const mainHeader = document.getElementById('main-header');
+const heroSection = document.getElementById('hero');
+
+window.addEventListener('scroll', function() {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+    // Sticky header: becomes solid after scrolling past 60% of hero height
+    const heroH = heroSection ? heroSection.offsetHeight : 400;
+    if (scrollY > heroH * 0.6) {
+        mainHeader && mainHeader.classList.add('scrolled');
+    } else {
+        mainHeader && mainHeader.classList.remove('scrolled');
+    }
+
+    // Scroll-to-top button
     const button = document.getElementById("scrollToTopBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (scrollY > 300) {
         button.style.display = "block";
     } else {
         button.style.display = "none";
     }
-};
+});
 
 function scrollToTop() {
     document.body.scrollTop = 0; // Safari
@@ -163,20 +177,38 @@ window.addEventListener('appinstalled', (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll(".fade-in");
 
-  const options = {
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // 一度表示したら監視を外す
+        obs.unobserve(entry.target);
       }
     });
-  }, options);
+  }, { threshold: 0.1 });
 
-  faders.forEach(fader => {
-    observer.observe(fader);
+  faders.forEach(fader => observer.observe(fader));
+
+  // Hamburger menu
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav   = document.getElementById('main-nav');
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      mainNav.querySelector('ul').classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+    mainNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mainNav.querySelector('ul').classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+  }
+
+  // Accordion: toggle 'open' class for CSS animation
+  document.querySelectorAll('.accordion-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+    });
   });
 });

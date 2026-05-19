@@ -5,120 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-5443316693153090">
     <title>未知の実りにご招待</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5443316693153090" crossorigin="anonymous"></script>
-
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="logo002_02.png" alt="イベントロゴ" class="logo">
+
+    <!-- Fixed Navigation -->
+    <header id="main-header">
+        <div class="header-inner">
+            <div class="header-logo">
+                <img src="logo002_02.png" alt="未知の実りにご招待">
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#top">イベント情報</a></li>
+                    <li><a href="#past-events">過去イベント</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#event-details">イベント情報</a></li>
-                <li><a href="#past-events">過去イベント</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-<section id="pwa-install-section" style="display: none; text-align: center;">
-    <h2>アプリとして利用しませんか？</h2>
-    <p>インストールすると、オフラインでも素早くアクセスできます。</p>
-    <button id="install-button">アプリをホーム画面に追加</button>
-</section>
-
-    <section id="slideshow"  class="fade-in">
-        <div class="slideshow-container">
-            <img class="slide" src="image_001.JPG" alt="スライド1">
-            <img class="slide" src="image_002.JPG" alt="スライド2">
-            <img class="slide" src="image_003.JPG" alt="スライド3">
-            <img class="slide" src="image_004.JPG" alt="スライド4">
-            <img class="slide" src="image_005.JPG" alt="スライド5">
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-content">
+            <img src="logo002_02.png" alt="未知の実りにご招待" class="hero-logo">
+            <p class="hero-tagline">年に一度の音楽の集い</p>
         </div>
-    </section>
-
-   <section id="news" class="fade-in">
-       <h2>NEWS</h2>
-<br>
-<table style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
-  <tr>
-    <td style="border: none; padding-right: 20px; text-align: left;">2024.09.01</td>
-    <td style="border: none; text-align: left;">HP更新</td>
-  </tr>
-  <tr>
-    <td style="border: none; padding-right: 20px; text-align: left;">2024.11.23</td>
-    <td style="border: none; text-align: left;">イベント開催</td>
-  </tr>
-  <tr>
-    <td style="border: none; padding-right: 20px; text-align: left;">2025.09.01</td>
-    <td style="border: none; text-align: left;">HP更新</td>
-  </tr>
-  <tr>
-    <td style="border: none; padding-right: 20px; text-align: left;">2025.11.23</td>
-    <td style="border: none; text-align: left;">イベント開催</td>
-  </tr>
-  <tr>
-    <td style="border: none; padding-right: 20px; text-align: left;">2025.12.01</td>
-    <td style="border: none; text-align: left;">HP更新</td>
-  </tr>
-</table>
-<br>
-   </section>
-
-    <section id="top" class="fade-in">
-        <h3>今年のイベント情報</h3>
-        <h4 id="status-message">現在、今年のイベントは準備中です！</h4>
-    </section>
- 
-    <section id="event-details" class="fade-in" style="display: none;"></section>
-
-    <section id="past-events" class="fade-in">
-        <h2>過去のイベント情報</h2>
-
-<div class="accordion">
-
-            <button class="accordion-button" onclick="loadEvent('2025')">2025年</button>
-            <div id="events-2025" class="accordion-content" style="display: none;"></div>
-
-            <button class="accordion-button" onclick="loadEvent('2024')">2024年</button>
-            <div id="events-2024" class="accordion-content" style="display: none;"></div>
-
-            <button class="accordion-button" onclick="loadEvent('2023')">2023年</button>
-            <div id="events-2023" class="accordion-content" style="display: none;"></div>
-
-            <button class="accordion-button" onclick="loadEvent('2022')">2022年</button>
-            <div id="events-2022" class="accordion-content" style="display: none;"></div>
-        </div>
-    </section>
-
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>出演希望やお問い合わせは、以下のインスタグラムアカウントまで。</p>
-        <a href="https://www.instagram.com/michino.minorini.goshotai/" target="_blank" class="instagram-link">
-            <i class="fab fa-instagram"></i> Instagram
+        <a href="#gallery" class="hero-scroll">
+            <span class="scroll-text">SCROLL</span>
+            <i class="fas fa-chevron-down"></i>
         </a>
     </section>
 
+    <!-- Photo Gallery -->
+    <section id="gallery">
+        <div class="slideshow-container">
+            <img class="slide" src="image_001.JPG" alt="イベント写真">
+            <img class="slide" src="image_002.JPG" alt="イベント写真">
+            <img class="slide" src="image_003.JPG" alt="イベント写真">
+            <img class="slide" src="image_004.JPG" alt="イベント写真">
+            <img class="slide" src="image_005.JPG" alt="イベント写真">
+        </div>
+    </section>
+
+    <!-- PWA Install -->
+    <section id="pwa-install-section" style="display: none;">
+        <div class="section-inner" style="text-align: center;">
+            <h2>アプリとして利用しませんか？</h2>
+            <p>インストールすると、オフラインでも素早くアクセスできます。</p>
+            <button id="install-button">ホーム画面に追加</button>
+        </div>
+    </section>
+
+    <!-- News -->
+    <section id="news" class="section-light fade-in">
+        <div class="section-inner">
+            <div class="section-title">
+                <span class="label">NEWS</span>
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <span class="news-date">2024.09.01</span>
+                    <span class="news-text">HP更新</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2024.11.23</span>
+                    <span class="news-text">イベント開催</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.09.01</span>
+                    <span class="news-text">HP更新</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.11.23</span>
+                    <span class="news-text">イベント開催</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.12.01</span>
+                    <span class="news-text">HP更新</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Event -->
+    <section id="top" class="section-dark fade-in">
+        <div class="section-inner">
+            <div class="section-title dark-title">
+                <span class="label">EVENT</span>
+                <h2>今年のイベント情報</h2>
+            </div>
+            <p id="status-message">現在、今年のイベントは準備中です</p>
+        </div>
+    </section>
+
+    <section id="event-details" class="section-dark fade-in" style="display: none;"></section>
+
+    <!-- Past Events -->
+    <section id="past-events" class="section-light fade-in">
+        <div class="section-inner">
+            <div class="section-title">
+                <span class="label">ARCHIVE</span>
+                <h2>過去のイベント</h2>
+            </div>
+            <div class="accordion">
+                <button class="accordion-button" onclick="loadEvent('2025')">
+                    <span>2025</span>
+                </button>
+                <div id="events-2025" class="accordion-content" style="display: none;"></div>
+
+                <button class="accordion-button" onclick="loadEvent('2024')">
+                    <span>2024</span>
+                </button>
+                <div id="events-2024" class="accordion-content" style="display: none;"></div>
+
+                <button class="accordion-button" onclick="loadEvent('2023')">
+                    <span>2023</span>
+                </button>
+                <div id="events-2023" class="accordion-content" style="display: none;"></div>
+
+                <button class="accordion-button" onclick="loadEvent('2022')">
+                    <span>2022</span>
+                </button>
+                <div id="events-2022" class="accordion-content" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-dark fade-in">
+        <div class="section-inner contact-inner">
+            <div class="section-title dark-title">
+                <span class="label">CONTACT</span>
+            </div>
+            <p class="contact-desc">出演希望やお問い合わせは、以下のインスタグラムアカウントまで。</p>
+            <a href="https://www.instagram.com/michino.minorini.goshotai/" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="logo002_02.png" alt="未知の実りにご招待" class="footer-logo">
+        <p class="footer-copy">&copy; 未知の実りにご招待</p>
+    </footer>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">▲</button>
+
     <script src="script.js"></script>
-    <button id="scrollToTopBtn" onclick="scrollToTop()">Topに戻る</button>
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(registration => {
-                    console.log('Service Worker registered:', registration);
-                })
-                .catch(error => {
-                    console.error('Service Worker registration failed:', error);
-                });
-        });
-    }
-</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => console.log('Service Worker registered:', registration))
+                    .catch(error => console.error('Service Worker registration failed:', error));
+            });
+        }
+    </script>
 </body>
 </html>
