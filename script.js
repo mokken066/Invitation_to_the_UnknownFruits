@@ -34,7 +34,9 @@ window.onload = function() {
     }
 
     // イベント情報を読み込む
-    fetch('event-info.html')
+    // 今年だけ変更
+    // fetch('event-info.html')
+    fetch('event-info_five_bold_ver.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('event-details').innerHTML = data;
