@@ -372,6 +372,15 @@ section {
     padding-bottom: 80px;
 }
 
+/* 画像サイズを地図(640px)に合わせ、中央揃え */
+#event-details img {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
 #event-details p {
     font-size: 14px;
     margin: 8px 0;
@@ -392,7 +401,10 @@ section {
     letter-spacing: 0.1em;
 }
 
+/* 地図コンテナを中央揃え */
 #event-details .map-container {
+    display: flex;
+    justify-content: center;
     max-width: 640px;
     margin: 20px auto;
 }
