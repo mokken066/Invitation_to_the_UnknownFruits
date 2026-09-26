@@ -12,6 +12,7 @@ const urlsToCache = [
   '/image_004.JPG',
   '/image_005.JPG',
   // 必要に応じて、他のリソース（過去イベントのHTMLファイルなど）を追加
+  '/events-2025.html',
   '/events-2024.html',
   '/events-2023.html',
   '/events-2022.html',
